@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="~/layuiadmin/layui/css/layui.css" />
+    <link rel="stylesheet" href="~/layuiadmin/style/admin.css" />
+    <style>
+        html, body, .login-container {
+            height: 100%
+        }
+
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: rgba(0, 0, 0, 0.2);
+            position: relative;
+            height: 900px;
+        }
+
+            .login-container::before {
+                z-index: -999;
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url("../../layuiadmin/Login.png");
+                background-size: cover;
+            }
+
+
+        .beg-login-box {
+            width: 350px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 0;
+            color: #383d49;
+            height: 300px;
+        }
+
+            .beg-login-box header {
+                height: 45px;
+                padding: 10px;
+                border-bottom: 1px solid aliceblue;
+            }
+
+                .beg-login-box header h1 {
+                    text-align: center;
+                    font-size: 25px;
+                    line-height: 40px;
+                }
+
+            .beg-login-box .beg-login-main {
+                height: 185px;
+                padding: 20px 30px 0;
+            }
+
+        .beg-login-main .layui-form-item {
+            position: relative;
+        }
+
+            .beg-login-main .layui-form-item .beg-login-icon {
+                position: absolute;
+                color: #cccccc;
+                top: 10px;
+                left: 10px;
+            }
+
+            .beg-login-main .layui-form-item input {
+                padding-left: 34px;
+            }
+
+        .beg-login-box footer {
+            height: 35px;
+            padding: 10px 10px 0 10px;
+        }
+
+            .beg-login-box footer p {
+                line-height: 35px;
+                text-align: center;
+            }
+
+        .beg-pull-left {
+            float: left !important;
+        }
+
+        .beg-pull-right {
+            float: right !important;
+        }
+
+        .beg-clear {
+            clear: both;
+        }
+    </style>
+    @RenderSection("Style", required: false)
+
+</head>
+<body class="layui-layout-body">
+    @RenderBody()
+    <script src="~/layuiadmin/layui/layui.js"></script>
+    <script>
+        layui.config({
+            base: '@Url.Content("~/layuiadmin/")' //静态资源所在路径
+        }).extend({
+            index: 'lib/index' //主入口模块
+        })
+    </script>
+    @RenderSection("Script", required: false)
+</body>
+</html>

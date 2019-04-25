@@ -8,9 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" href="~/layuiadmin/layui/css/layui.css" />
     <link rel="stylesheet" href="~/layuiadmin/style/admin.css" />
+    <style>
+        .layui-layout-center{
+            position:absolute;
+            top:0;
+            left:330px
+        }
+        .layadmin-side-shrink .layui-layout-admin .layui-layout-center {
+            left: 160px
+        }
+        
+    </style>
     @RenderSection("Style", required: false)
 </head>
-<body class="layui-layout-body">
+<body>
     @RenderBody()
     <script src="~/layuiadmin/layui/layui.js"></script>
     <script>

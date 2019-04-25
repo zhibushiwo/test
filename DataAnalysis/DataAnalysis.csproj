@@ -332,6 +332,7 @@
     <Content Include="layuiadmin\tpl\system\theme.html" />
     <Content Include="layuiadmin\tpl\system\说明.txt" />
     <Content Include="layuiadmin\tpl\说明.txt" />
+    <Content Include="Scripts\echarts.min.js" />
     <Content Include="Scripts\leaflet\images\layers-2x.png" />
     <Content Include="Scripts\leaflet\images\layers.png" />
     <Content Include="Scripts\leaflet\images\marker-icon-2x.png" />

@@ -67,12 +67,63 @@
                 </div>
             </div>
         </div>
+        <div class="layui-col-sm8">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    数据运行
+                    <div class="layui-btn-group layuiadmin-btn-group">
+                        <a href="javascript:;" class="layui-btn layui-btn-primary layui-btn-xs">日</a>
+                        <a href="javascript:;" class="layui-btn layui-btn-xs">周</a>
+                        <a href="javascript:;" class="layui-btn layui-btn-primary layui-btn-xs">月</a>
+                    </div>
+                </div>
+                <div class="layui-card-body">
+                    <div class="layui-row">
+                        <div class="layui-col-sm6">
+                            <div id="chartPie1" class="layadmin-dataview"></div>
+                        </div>
+                        <div class="layui-col-sm6">
+                            <div id="chartPie2" class="layadmin-dataview"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-sm4">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    运行时间分布
+                    <select class="layui-select" style="height:24px">
+                        <option selected>全部型号</option>
+                        <option>设备1</option>
+                        <option>设备2</option>
+                        <option>设备3</option>
 
+                    </select>
+                    <div class="layui-btn-group layuiadmin-btn-group">
+
+                        <a href="javascript:;" class="layui-btn layui-btn-primary layui-btn-xs">日</a>
+                        <a href="javascript:;" class="layui-btn layui-btn-xs">周</a>
+                        <a href="javascript:;" class="layui-btn layui-btn-primary layui-btn-xs">月</a>
+                    </div>
+                </div>
+                <div class="layui-card-body">
+                    <div id="chartPie3" class="layadmin-dataview"></div>
+                </div>
+            </div>
+        </div>
         <div class="layui-col-sm12">
             <div class="layui-row layui-col-space15">
                 <div class="layui-col-sm4">
                     <div class="layui-card">
-                        <div class="layui-card-header">设备运行</div>
+                        <div class="layui-card-header">
+                            设备运行
+                            <div class="layui-btn-group layuiadmin-btn-group">
+                                <a href="javascript:;" class="layui-btn layui-btn-primary layui-btn-xs">日</a>
+                                <a href="javascript:;" class="layui-btn layui-btn-xs">周</a>
+                                <a href="javascript:;" class="layui-btn layui-btn-primary layui-btn-xs">月</a>
+                            </div>
+                        </div>
                         <div class="layui-card-body">
                             <table class="layui-table layuiadmin-page-table" lay-skin="line">
                                 <thead>
@@ -134,76 +185,66 @@
                 </div>
                 <div class="layui-col-sm8">
                     <div class="layui-card">
-                        <div class="layui-card-header">数据分析</div>
+                        <div class="layui-card-header">数据分析
+                            <div class="layuiadmin-btn-group layui-btn-group">
+                                <select class="layui-select" style="height:24px;font-size:14px">
+                                    <option selected>全部型号</option>
+                                    <option>设备1</option>
+                                    <option>设备2</option>
+                                    <option>设备3</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="layui-card-body">
-                            <div id="chartFlow" class="layadmin-dataview" ></div>
+                            <div id="chart1" class="layadmin-dataview"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="layui-col-sm12">
+        <div class="layui-col-sm6">
             <div class="layui-card">
                 <div class="layui-card-header">
                     设备运行状况
-                    <div class="layui-btn-group layuiadmin-btn-group">
-                        <a href="javascript:;" class="layui-btn layui-btn-primary layui-btn-xs">按机型</a>
-                        <a href="javascript:;" class="layui-btn layui-btn-primary layui-btn-xs">按分销商</a>
-                    </div>
+                </div>
+                <div class="layui-card-body">
+                    <div id="chartFlow" class="layadmin-dataview"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-sm6">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    设备运行状况
                 </div>
                 <div class="layui-card-body">
                     <div class="layui-row">
                         <div class="layui-col-sm8">
-                            <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade" lay-filter="LAY-index-pagetwo">
-                                <div carousel-item id="LAY-index-pagetwo">
-                                    <div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
-                                </div>
+                            <div id="chartPie4" class="layadmin-dataview">
+
                             </div>
                         </div>
-                        <div class="layui-col-sm4">
-                            <div class="layuiadmin-card-list">
-                                <p class="layuiadmin-normal-font">月访问数</p>
-                                <span>同上期增长</span>
-                                <div class="layui-progress layui-progress-big" lay-showPercent="yes">
-                                    <div class="layui-progress-bar" lay-percent="30%"></div>
-                                </div>
+                        <div class="layui-col-sm4 layadmin-takerates">
+                        <div class="layuiadmin-card-list">
+                            <p class="layuiadmin-normal-font">本周销量</p>
+                            <div class="layui-progress" lay-showPercent="yes">
+                                <h3>(25<span class="layui-edge layui-edge-bottom" ></span>）</h3>
+                                <div class="layui-progress-bar layui-bg-red" lay-percent="65%"></div>
                             </div>
-                            <div class="layuiadmin-card-list">
-                                <p class="layuiadmin-normal-font">月下载数</p>
-                                <span>同上期增长</span>
-                                <div class="layui-progress layui-progress-big" lay-showPercent="yes">
-                                    <div class="layui-progress-bar" lay-percent="20%"></div>
-                                </div>
+                        </div>
+                        <div class="layuiadmin-card-list">
+                            <p class="layuiadmin-normal-font">本月销量</p>
+                            <div class="layui-progress" lay-showPercent="yes">
+                                <h3>(120<span class="layui-edge layui-edge-top"></span>）</h3>
+                                <div class="layui-progress-bar " lay-percent="50%"></div>
                             </div>
-                            <div class="layuiadmin-card-list">
-                                <p class="layuiadmin-normal-font">月收入</p>
-                                <span>同上期增长</span>
-                                <div class="layui-progress layui-progress-big" lay-showPercent="yes">
-                                    <div class="layui-progress-bar" lay-percent="25%"></div>
-                                </div>
-                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="layui-col-md12">
-            <div class="layui-card">
-                <div class="layui-card-header">数据运行</div>
-                <div class="layui-card-body">
-                    <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade" lay-filter="LAY-index-dataview">
-                        <div carousel-item id="LAY-index-dataview">
-                            <div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-
 
     </div>
 </div>
@@ -211,20 +252,29 @@
 @section Script{
     <script src="~/Scripts/echarts.min.js"></script>
     <script>
-        layui.use(['index', 'sample', 'console'], function () {
+        layui.use(['index', 'form'], function () {
             var $ = layui.$;
+            var form = layui.form;
+            $(function () {
+                form.render()
+            })
             var chartFlow = echarts.init(document.querySelector("#chartFlow"), layui.echartsTheme);
+            var chartPie1 = echarts.init(document.querySelector("#chartPie1"), layui.echartsTheme);
+            var chartPie2 = echarts.init(document.querySelector("#chartPie2"), layui.echartsTheme);
+            var chartPie3 = echarts.init(document.querySelector("#chartPie3"), layui.echartsTheme);
+            var chartPie4 = echarts.init(document.querySelector("#chartPie4"), layui.echartsTheme);
+            var chart1 = echarts.init(document.querySelector("#chart1"), layui.echartsTheme);      
             dataMap = {};
             function dataFormatter(obj) {
-                var pList = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'];
+                var pList = ['设备型号1', '设备型号2', '设备型号3', '设备型号4', '设备型号5', '设备型号6', '设备型号7', '设备型号8', '设备型号9', '设备型号10'];
                 var temp;
-                for (var month = 1; month <= 12; month++) {
+                for (var month = 1; month <= 7; month++) {
 
                     temp = obj[month.toString()];
                     obj[month + 'sum'] = temp[0];
-                    for (var i = 1, len = temp.length; i < len; i++) {
+                    for (var i = 1, len = 10; i < len; i++) {
                         obj[month.toString()][i] = {
-                            name: pList[i],
+                            name: '设备型号'+pList[i],
                             value: temp[i]
                         }
                     }
@@ -234,7 +284,13 @@
                 return obj;
             }
             dataMap.dataMonth = dataFormatter({
-                '1': [1020, 45, 45, 34, 25, 43, 37, 31, 32, 26, 33, 25, 35, 23, 25, 39, 31, 32, 48, 37, 33, 35, 32, 34, 25, 28, 35, 44, 36, 26, 26, 20], '2': [928, 39, 42, 27, 29, 39, 36, 34, 38, 25, 30, 31, 34, 29, 35, 32, 28, 29, 37, 27, 47, 25, 25, 30, 31, 33, 42, 27, 39, 8, 0, 0], '3': [1024, 29, 26, 37, 48, 41, 34, 26, 45, 21, 39, 35, 37, 41, 29, 32, 34, 25, 39, 24, 35, 34, 36, 29, 25, 35, 32, 31, 45, 30, 29, 21], '4': [878, 26, 34, 24, 31, 36, 20, 24, 28, 30, 25, 22, 32, 28, 32, 28, 27, 34, 34, 30, 39, 36, 16, 26, 36, 34, 26, 34, 26, 26, 34, 0], '5': [902, 28, 27, 38, 26, 22, 32, 28, 39, 36, 31, 35, 20, 29, 27, 36, 25, 23, 24, 26, 35, 21, 27, 41, 30, 33, 26, 27, 30, 31, 30, 19], '6': [914, 31, 29, 31, 30, 34, 40, 32, 38, 16, 31, 27, 25, 28, 27, 28, 28, 33, 36, 23, 34, 36, 33, 31, 31, 30, 26, 35, 30, 34, 27, 0], '7': [1070, 31, 35, 36, 34, 29, 36, 28, 49, 28, 33, 36, 32, 36, 31, 47, 30, 41, 41, 43, 33, 24, 38, 40, 33, 32, 35, 21, 43, 38, 33, 24], '8': [1342, 47, 35, 26, 32, 40, 40, 31, 63, 37, 44, 37, 40, 41, 41, 48, 50, 36, 65, 44, 51, 40, 41, 51, 36, 39, 63, 55, 59, 32, 38, 40], '9': [1157, 32, 34, 33, 29, 39, 44, 32, 33, 33, 57, 36, 31, 41, 32, 36, 36, 42, 49, 45, 55, 37, 34, 35, 36, 43, 55, 34, 42, 34, 38, 0], '10': [1185, 45, 46, 33, 29, 50, 31, 40, 57, 33, 49, 34, 50, 31, 34, 33, 31, 32, 36, 33, 51, 49, 41, 30, 32, 48, 45, 39, 41, 30, 28, 24], '11': [1116, 45, 39, 42, 38, 34, 41, 38, 39, 39, 36, 28, 32, 37, 30, 38, 56, 36, 46, 34, 37, 23, 31, 40, 35, 35, 44, 42, 51, 24, 26, 0], '12': [1026, 44, 38, 32, 35, 36, 47, 35, 43, 30, 38, 32, 33, 38, 36, 27, 36, 30, 31, 32, 38, 29, 25, 27, 24, 36, 37, 26, 47, 23, 27, 14]
+                '1': [1020, 45, 45, 34, 25, 43, 37, 31, 32, 26, 33 ], 
+                '2': [928,  39, 42, 27, 29, 39, 36, 34, 38, 25, 30 ],
+                '3': [1024, 29, 26, 37, 48, 41, 34, 26, 45, 21, 39 ],
+                '4': [878,  26, 34, 24, 31, 36, 20, 24, 28, 30, 25 ],
+                '5': [902,  28, 27, 38, 26, 22, 32, 28, 39, 36, 31 ],
+                '6': [914,  31, 29, 31, 30, 34, 40, 32, 38, 16, 31 ],
+                '7': [1070, 31, 35, 36, 34, 29, 36, 28, 49, 28, 33 ]
             }
             );
             option = {
@@ -246,14 +302,14 @@
                         // loop: false,
                         autoPlay: true,
                         // currentIndex: 2,
-                        playInterval: 1500,
+                        playInterval: 3000,
                         // controlStyle: {
                         //     position: 'left'
                         // },
-                        data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+                        data: ['1', '2', '3', '4', '5', '6', '7'],
                         label: {
                             formatter: function (s) {
-                                return s + "月"
+                                return s + "号"
                             }
                         }
                     },
@@ -272,14 +328,14 @@
                             name: "天",
                             'type': 'category',
                             'axisLabel': { 'interval': 0 },
-                            'data': ['1', '\n2', '3', '\n4', '5', '\n6', '7', '\n8', '9', '\n10', '11', '\n12', '13', '\n14', '15', '\n16', '17', '\n18', '19', '\n20', '21', '\n22', '23', '\n24', '25', '\n26', '27', '\n28', '29', '\n30', '31'],
+                            'data': ['设备型号1', '设备型号2', '设备型号3', '设备型号4', '设备型号5', '设备型号6', '设备型号7', '设备型号8', '设备型号9', '设备型号10'],
                             splitLine: { show: false }
                         }
                     ],
                     yAxis: [
                         {
                             type: 'value',
-                            name: '人数',
+                            name: '时间',
                             // max: 53500
                             max: 100,
                             splitLine: { show: false }
@@ -288,24 +344,19 @@
                     series: [
                         { name: 'days', type: 'bar' },
                         {
-                            name: '每月设备占比',
+                            name: '七日设备占比',
                             type: 'pie',
                             color: ['#A5DEE4', '#81C7D4', '#24936E', '#5DAC81', '#A8D8B9', "#F596AA", "#E87A90", "#F4A7B9", "#DB8E71", "#FB9966", "#E9A368", "#58B2DC"],
                             center: ['75%', '20%'],
                             radius: [20, '28%'],
                             roseType: 'area',
-                            data: [{ name: "1月", value: dataMap.dataMonth["1sum"] },
-                            { name: "2月", value: dataMap.dataMonth["2sum"] },
-                            { name: "3月", value: dataMap.dataMonth["3sum"] },
-                            { name: "4月", value: dataMap.dataMonth["4sum"] },
-                            { name: "5月", value: dataMap.dataMonth["5sum"] },
-                            { name: "6月", value: dataMap.dataMonth["6sum"] },
-                            { name: "7月", value: dataMap.dataMonth["7sum"] },
-                            { name: "8月", value: dataMap.dataMonth["8sum"] },
-                            { name: "9月", value: dataMap.dataMonth["9sum"] },
-                            { name: "10月", value: dataMap.dataMonth["10sum"] },
-                            { name: "11月", value: dataMap.dataMonth["11sum"] },
-                            { name: "12月", value: dataMap.dataMonth["12sum"] },
+                            data: [{ name: "1号", value: dataMap.dataMonth["1sum"] },
+                            { name: "2号", value: dataMap.dataMonth["2sum"] },
+                            { name: "3号", value: dataMap.dataMonth["3sum"] },
+                            { name: "4号", value: dataMap.dataMonth["4sum"] },
+                            { name: "5号", value: dataMap.dataMonth["5sum"] },
+                            { name: "6号", value: dataMap.dataMonth["6sum"] },
+                            { name: "7号", value: dataMap.dataMonth["7sum"] },
                             ]
                         }
 
@@ -313,7 +364,7 @@
                 },
                 options: [
                     {
-                        title: { subtext: '1月设备分布-Acring' },
+                        title: { subtext: '1日设备分布-Acring' },
                         series: [
                             {
                                 data: dataMap.dataMonth['1'], itemStyle: {
@@ -327,7 +378,7 @@
                     },
                     {
 
-                        title: { subtext: '2月设备分布-Acring' },
+                        title: { subtext: '2日设备分布-Acring' },
                         series: [{
                             data: dataMap.dataMonth['2'], itemStyle: {
                                 normal: {
@@ -337,7 +388,7 @@
                         },]
                     },
                     {
-                        title: { subtext: '3月设备分布-Acring' },
+                        title: { subtext: '3日设备分布-Acring' },
                         series: [{
                             data: dataMap.dataMonth['3'], itemStyle: {
                                 normal: {
@@ -347,7 +398,7 @@
                         },]
                     },
                     {
-                        title: { subtext: '4月设备分布-Acring' },
+                        title: { subtext: '4日设备分布-Acring' },
                         series: [{
                             data: dataMap.dataMonth['4'], itemStyle: {
                                 normal: {
@@ -357,7 +408,7 @@
                         },]
                     },
                     {
-                        title: { subtext: '5月设备分布-Acring' },
+                        title: { subtext: '5日设备分布-Acring' },
                         series: [{
                             data: dataMap.dataMonth['5'], itemStyle: {
                                 normal: {
@@ -367,7 +418,7 @@
                         },]
                     },
                     {
-                        title: { subtext: '6月设备分布-Acring' },
+                        title: { subtext: '6日设备分布-Acring' },
                         series: [{
                             data: dataMap.dataMonth['6'], itemStyle: {
                                 normal: {
@@ -377,7 +428,7 @@
                         },]
                     },
                     {
-                        title: { subtext: '7月设备分布-Acring' },
+                        title: { subtext: '7日设备分布-Acring' },
                         series: [{
                             data: dataMap.dataMonth['7'], itemStyle: {
                                 normal: {
@@ -385,63 +436,185 @@
                                 }
                             },
                         },]
-                    },
-                    {
-                        title: { subtext: '8月设备分布-Acring' },
-                        series: [{
-                            data: dataMap.dataMonth['8'], itemStyle: {
-                                normal: {
-                                    color: "#F4A7B9"
-                                }
-                            },
-                        },]
-                    },
-                    {
-                        title: { subtext: '9月设备分布-Acring' },
-                        series: [{
-                            data: dataMap.dataMonth['9'], itemStyle: {
-                                normal: {
-                                    color: "#DB8E71"
-                                }
-                            },
-                        },]
-                    },
-                    {
-                        title: { subtext: '10月设备分布-Acring' },
-                        series: [{
-                            data: dataMap.dataMonth['10'], itemStyle: {
-                                normal: {
-                                    color: "#FB9966"
-                                }
-                            },
-                        },]
-                    },
-                    {
-                        title: { subtext: '11月设备分布-Acring' },
-                        series: [{
-                            data: dataMap.dataMonth['11'], itemStyle: {
-                                normal: {
-                                    color: "#E9A368"
-                                }
-                            },
-                        },]
-                    },
-                    {
-                        title: { subtext: '12月设备分布-Acring' },
-                        series: [{
-                            data: dataMap.dataMonth['12'], itemStyle: {
-                                normal: {
-                                    color: "#58B2DC"
-                                }
-                            },
-                        },]
-                    },
-
+                    }
                 ]
             };
             chartFlow.setOption(option)
+            var option2 = {
+                title: {
+                    text: '机型开模次数',
+                    x: 'center',
+                    textStyle: {
+                        fontSize: 14
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['设备型号1', '设备型号2', '设备型号3', '设备型号4', '设备型号5', '设备型号6', '设备型号7']
+                },
+                series: [{
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '50%'],
+                    data: [
+                        { value: 5252, name: '设备型号1'},
+                        { value: 1610, name: '设备型号2'},
+                        { value: 3200, name: '设备型号3'},
+                        { value: 1535,  name: '设备型号4'},
+                        { value: 1700, name: '设备型号5'},
+                        { value: 9552, name: '设备型号6'},
+                        { value: 1410, name: '设备型号7'}
 
+                    ]
+                }]
+            }         
+            var option3 = {
+                title: {
+                    text: '机型运行时长',
+                    x: 'center',
+                    textStyle: {
+                        fontSize: 14
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['设备型号1', '设备型号2', '设备型号3', '设备型号4', '设备型号5', '设备型号6', '设备型号7']
+                },
+                series: [{
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '50%'],
+                    data: [
+                        { value: 5252, name: '设备型号1' },
+                        { value: 1610, name: '设备型号2' },
+                        { value: 3200, name: '设备型号3' },
+                        { value: 1535, name: '设备型号4' },
+                        { value: 1700, name: '设备型号5' },
+                        { value: 9552, name: '设备型号6' },
+                        { value: 1410, name: '设备型号7' },
+
+                    ]
+                }]
+            }
+
+            var option4 = {
+                title: {
+                    text: '运行时间分布',
+                    x: 'center',
+                    textStyle: {
+                        fontSize: 14
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['开机', '待机', '关机']
+                },
+                series: [{
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '50%'],
+                    color: ['#009688', '#FFB800', '#FF5722'],
+                    data: [
+                        { value: 5252, name: '开机' },
+                        { value: 1610, name: '待机' },
+                        { value: 2200, name: '关机' }
+                    ]
+                }]
+            }
+            var option5 = {
+                title: {
+                    text: '机型销量',
+                    x: 'center',
+                    textStyle: {
+                        fontSize: 14
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['设备型号1', '设备型号2', '设备型号3', '设备型号4', '设备型号5', '设备型号6', '设备型号7']
+                },
+                series: [{
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '50%'],
+                    data: [
+                        { value: 125, name: '设备型号1' },
+                        { value: 55, name: '设备型号2' },
+                        { value: 33, name: '设备型号3' },
+                        { value: 22, name: '设备型号4' },
+                        { value: 25, name: '设备型号5' },
+                        { value: 169, name: '设备型号6' },
+                        { value: 25, name: '设备型号7' }
+                    ]
+                }]
+            }
+            var option6 = {
+                title: {
+                    text: '今日开模数量',
+                    x: 'center',
+                    textStyle: {
+                        fontSize: 14
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['', '']
+                },
+                xAxis: [{
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30']
+                }],
+                yAxis: [{
+                    type: 'value'
+                }],
+                series: [{
+                    name: 'PV',
+                    type: 'line',
+                    smooth: true,
+                    itemStyle: { color: "#7ecac3" },
+                    areaStyle: { color:"#7ecac3" },
+                    data: [111, 222, 333, 444, 555, 666, 3333, 33333, 55555, 66666, 33333, 3333, 6666, 11888, 26666, 38888, 56666, 42222, 39999, 28888, 17777, 9666, 6555, 5555, 3333, 2222, 3111, 6999, 5888, 2777, 1666, 999, 888, 777]
+                }, {
+                    name: 'UV',
+                    type: 'line',
+                    smooth: true,
+                    itemStyle: { normal: { areaStyle: { type: 'default' } } },
+                    data: [11, 22, 33, 44, 55, 66, 333, 3333, 5555, 12666, 3333, 333, 666, 1188, 2666, 3888, 6666, 4222, 3999, 2888, 1777, 966, 655, 555, 333, 222, 311, 699, 588, 277, 166, 99, 88, 77]
+                }]
+            }
+
+            chartPie1.setOption(option2)
+            chartPie2.setOption(option3)
+            chartPie3.setOption(option4)
+            chartPie4.setOption(option5)
+            chart1.setOption(option6)
         })
-
     </script>
 }

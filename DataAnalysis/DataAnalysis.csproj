@@ -362,6 +362,7 @@
     <Content Include="layuiadmin\layui\font\iconfont.ttf" />
     <Content Include="layuiadmin\layui\font\iconfont.woff" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

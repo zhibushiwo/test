@@ -11,8 +11,8 @@ namespace DataAnalysis.Controllers
     {
         public ActionResult Index()
         {
-            if (string.IsNullOrEmpty(CurUser.LoginName))
-                return RedirectToRoute(new { controller = "Login", action = "Index" });
+            //if (string.IsNullOrEmpty(CurUser.LoginName))
+            //    return RedirectToRoute(new { controller = "Login", action = "Index" });
             return View();
         }
 

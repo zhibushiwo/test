@@ -10,76 +10,106 @@
         <div class="layui-card">
             <div class="layui-card-header">地图</div>
             <div class="layui-card-body">
-                <div class="col-xs-12" id="mapDiv" style="height:600px"></div>
+                <div class="col-xs-12" id="mapDiv" style="height:700px"></div>
             </div>
         </div>
     </div>
 </div>
+<div style="width: 0; height: 0; overflow: hidden">
+    <div id="info" class="layui-row" style="padding:8px">
+            <form action="#" class="layui-form" id="ItemDetail" method="post">
+                <div class='layui-col-lg12 layui-col-md12 layui-col-sm12 layui-col-xs12'>
+                    <div class='layui-form-item {hidden}' data-code='HBillNo'>
+                        <label class='layui-form-label'>设备型号</label><div class='layui-input-block'>
+                            <input type='text' data-code='设备型号' name='HBillNo' placeholder='' lay-verify='required' autocomplete='off' value='HX1555544' class='layui-input'>
+                        </div>
+                    </div>
+                </div>
+                <div class='layui-col-lg12 layui-col-md12 layui-col-sm12 layui-col-xs12'>
+                    <div class='layui-form-item {hidden}' data-code='HBillNo'>
+                        <label class='layui-form-label'>SIM卡号</label><div class='layui-input-block'>
+                            <input type='text' data-code='设备型号' name='HBillNo' placeholder='' lay-verify='required' autocomplete='off' value='455857977858778' class='layui-input'>
+                        </div>
+                    </div>
+                </div>
+                <div class='layui-col-lg12 layui-col-md12 layui-col-sm12 layui-col-xs12'>
+                    <div class='layui-form-item {hidden}' data-code='HBillNo'>
+                        <label class='layui-form-label'>当前状态</label><div class='layui-input-block'>
+                            <input type="checkbox" checked="checked" name="open" lay-skin="switch" lay-filter="switchTest" lay-text="运行中|关闭中">
+                        </div>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
 
-@section Script{
+    @section Script{
 
-    <script src="~/Scripts/leaflet/leaflet.js"></script>
-    <script>
-        layui.use(['element','layer'], function () {
-        const urlTemplate = {
-            //在mapbox自定义的影像地图
-            mapbox_Image: "https://api.mapbox.com/styles/v1/yqcim/cizh1ma3400ez2so5x1anhuzo/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoieXFjaW0iLCJhIjoiY2l6ZmhnZjExMDBhajJ4cGxnNGN5MnhpdCJ9.pcZtdfk8mSFboCdwqkvW6g",
-            //在mapbox自定义的矢量地图
-            mapbox_Vector: "https://api.mapbox.com/styles/v1/liuvigongzuoshi/cjbf0ypqz8wp62ro6iayiivzy/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGl1dmlnb25nenVvc2hpIiwiYSI6ImNqYmYwd24wczJyd24yeGxsMWE5bGpxaGkifQ.CVKELjW5ASK8EnQfQCbxFw",
-            //在mapbox地图接口
-            mapbox_url: 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
-        }
+        <script src="~/Scripts/leaflet/leaflet.js"></script>
+        <script>
+            layui.use(['element', 'layer', 'form'], function () {
+                var $=layui.$
+                const urlTemplate = {
+                    //在mapbox自定义的影像地图
+                    mapbox_Image: "https://api.mapbox.com/styles/v1/yqcim/cizh1ma3400ez2so5x1anhuzo/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoieXFjaW0iLCJhIjoiY2l6ZmhnZjExMDBhajJ4cGxnNGN5MnhpdCJ9.pcZtdfk8mSFboCdwqkvW6g",
+                    //在mapbox自定义的矢量地图
+                    mapbox_Vector: "https://api.mapbox.com/styles/v1/liuvigongzuoshi/cjbf0ypqz8wp62ro6iayiivzy/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGl1dmlnb25nenVvc2hpIiwiYSI6ImNqYmYwd24wczJyd24yeGxsMWE5bGpxaGkifQ.CVKELjW5ASK8EnQfQCbxFw",
+                    //在mapbox地图接口
+                    mapbox_url: 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
+                }
 
-        const map = L.map("mapDiv", {
-            zoomControl: true,
-            attributionControl: true,
+                const map = L.map("mapDiv", {
+                    zoomControl: true,
+                    attributionControl: true,
 
-        }).setView([29.849167, 121.669444], 12);
-        let Baselayer = L.tileLayer(urlTemplate.mapbox_url, {
-            maxZoom: 17, //最大视图
-            minZoom: 2, //最小视图
-            id: 'mapbox.streets',
-        }).addTo(map);
+                }).setView([29.849167, 121.669444], 12);
+                let Baselayer = L.tileLayer(urlTemplate.mapbox_url, {
+                    maxZoom: 17, //最大视图
+                    minZoom: 2, //最小视图
+                    id: 'mapbox.streets',
+                }).addTo(map);
 
 
-        var marker = L.marker([29.859167, 121.669444], {
-        }).addTo(map).on("click", function (e) { layui.layer.msg(e.target._tooltip._content) })
-            .bindTooltip("test", {
-                permanent: true,
-                offset: [0, 0],// 偏移
-                direction: "right",// 放置位置
-                // sticky:true,//是否标记在点上面
-                className: 'anim-tooltip',// CSS控制
-            }).openTooltip();
+                var marker1 = L.marker([29.859167, 121.669444], {
+                }).addTo(map).on("click", function (e) { layui.layer.msg(e.target._tooltip._content) })
+                    .bindTooltip("设备编码1", {
+                        permanent: true,
+                        offset: [0, 0],// 偏移
+                        direction: "right",// 放置位置
+                        // sticky:true,//是否标记在点上面
+                        className: 'anim-tooltip',// CSS控制
+                    }).openTooltip();
 
-        var marker = L.marker([29.859167, 121.656554], {
-        }).addTo(map).on("click", function (e) { console.log(e) })
-            .bindTooltip("test2", {
-                permanent: true,
-                offset: [0, 0],// 偏移
-                direction: "right",// 放置位置
-                // sticky:true,//是否标记在点上面
-                className: 'anim-tooltip',// CSS控制
-            }).openTooltip().on('popupopen', function (e) {
-                console.log(e)
-            });
-
-        var btn = document.querySelector("#test");
-        })
-        function getLocation() {
-            alert(1)
-            if (navigator.geolocation) {
-                var position = navigator.geolocation.getCurrentPosition(showPosition, err);
-                //showPosition(position);
-
-            }
-            else { alert("Geolocation is not supported by this browser."); }
-        }
-        function showPosition(x) {
-            console.log(x)
-        }
-        function err() {
-            alert(2)
-        }
-    </script>
-}
+                var marker2 = L.marker([29.879167, 121.656554], {
+                }).addTo(map).on("click", function (e) { showInfo() })
+                    .bindTooltip("设备编码2", {
+                        permanent: true,
+                        offset: [0, 0],// 偏移
+                        direction: "right",// 放置位置
+                        // sticky:true,//是否标记在点上面
+                        className: 'anim-tooltip',// CSS控制
+                    }).openTooltip().on('popupopen', function (e) {
+                        console.log(e)
+                    });
+                var marker3 = L.marker([29.877167, 121.668554], {
+                }).addTo(map).on("click", function (e) { showInfo() })
+                    .bindTooltip("设备编码3", {
+                        permanent: true,
+                        offset: [0, 0],// 偏移
+                        direction: "right",// 放置位置
+                        // sticky:true,//是否标记在点上面
+                        className: 'anim-tooltip',// CSS控制
+                    }).openTooltip().on('popupopen', function (e) {
+                        console.log(e)
+                    });
+                function showInfo() {
+                    layui.layer.open({
+                        title:"设备信息",
+                        type: 1,
+                        content: $("#info"),
+                        area:['500px','300px']
+                    })
+                }
+            })
+        </script>
+    }

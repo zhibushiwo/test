@@ -129,7 +129,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -363,6 +362,10 @@
     <Content Include="layuiadmin\layui\font\iconfont.woff" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Views\Home\Map.cshtml" />
+    <Content Include="Views\Home\Table.cshtml" />
+    <Content Include="Views\Home\DashBoard.cshtml" />
+    <Content Include="Views\Home\Settings.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -399,7 +402,6 @@
     <Content Include="Scripts\leaflet\leaflet-src.js.map" />
     <Content Include="Scripts\leaflet\leaflet.js.map" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\DashBoard\Index.cshtml" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
   <ItemGroup>

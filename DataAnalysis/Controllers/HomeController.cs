@@ -11,21 +11,23 @@ namespace DataAnalysis.Controllers
     {
         public ActionResult Index()
         {
-            //if (string.IsNullOrEmpty(CurUser.LoginName))
-            //    return RedirectToRoute(new { controller = "Login", action = "Index" });
+            if (string.IsNullOrEmpty(CurUser.LoginName))
+                return RedirectToRoute(new { controller = "Login", action = "Index" });
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult DashBoard()
         {
-            ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Map()
         {
-            ViewBag.Message = "Your contact page.";
+            return View();
+        }
+        public ActionResult Table()
+        {
 
             return View();
         }

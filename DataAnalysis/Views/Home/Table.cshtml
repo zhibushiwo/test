@@ -7,65 +7,110 @@
 <div class="layui-fluid">
     <div class="layui-row layui-col-space15">
         <div class="layui-card">
-            <div class="layui-card-header">表格</div>
+            <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">设备编码</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="orderid" placeholder="请输入" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">设备名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">设备类型</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="attr" placeholder="请输入" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">所属</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="accept" placeholder="请输入" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn layuiadmin-btn-order" lay-submit lay-filter="LAY-app-order-search">
+                            <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
             <div class="layui-card-body">
-                <table class="layui-table">
-                    <colgroup>
-                        <col width="150">
-                        <col width="150">
-                        <col width="200">
-                        <col>
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>人物</th>
-                            <th>民族</th>
-                            <th>出场时间</th>
-                            <th>格言</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>贤心</td>
-                            <td>汉族</td>
-                            <td>1989-10-14</td>
-                            <td>人生似修行</td>
-                        </tr>
-                        <tr>
-                            <td>张爱玲</td>
-                            <td>汉族</td>
-                            <td>1920-09-30</td>
-                            <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
-                        </tr>
-                        <tr>
-                            <td>Helen Keller</td>
-                            <td>拉丁美裔</td>
-                            <td>1880-06-27</td>
-                            <td> Life is either a daring adventure or nothing.</td>
-                        </tr>
-                        <tr>
-                            <td>岳飞</td>
-                            <td>汉族</td>
-                            <td>1103-北宋崇宁二年</td>
-                            <td>教科书再滥改，也抹不去“民族英雄”的事实</td>
-                        </tr>
-                        <tr>
-                            <td>孟子</td>
-                            <td>华夏族（汉族）</td>
-                            <td>公元前-372年</td>
-                            <td>猿强，则国强。国强，则猿更强！ </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <table class="layui-table" id="table" lay-filter="table"></table>
             </div>
         </div>
     </div>
 </div>
-@section Style{
+@section Script{
+    <script type="text/html" id="barDemo">
+        <a class="layui-btn layui-btn-xs" lay-event="edit">查看</a>
+    </script>
     <script>
-        layui.use(['table'],function(){
-            
+        layui.use(['table'], function () {
+            var table = layui.table;
+            table.render({
+                elem: "#table",
+                cols: [[
+                    { field: 'id', width: 80, title: 'ID', sort: true }
+                    , { field: '设备编码' , title: '设备编码' }
+                    , { field: '设备名称', title: '设备名称', sort: true }
+                    , { field: '设备类型', title: '设备类型', sort: true }
+                    , { field: '所属', title: '所属', sort: true }
+                    , { field: '运行时长', title: '运行时长', sort: true }
+                    , { field: '开模次数', title: '开模次数', sort: true }
+                    , {
+                        field: '设备状态', title: '设备状态', width: 100,
+                        templet: function (res) {
+                            return res["设备状态"] == 1 ? "<i class=' layui-icon layui-icon-circle-dot' style='color:#5FB878'></i>" :
+                                res["设备状态"] == 2 ? "<i class='layui-icon layui-icon-circle-dot' style='color:#FFB800'></i>":
+                                "<i class='layui-icon layui-icon-circle-dot' style='color:#FF5722'></i>"
+                        }
+                    }
+                    , { field: '备注', title: '备注', sort: true }
+                    , { fixed: 'right', title: '操作', toolbar: '#barDemo', width: 150 }]]
+                    ,
+                data: [
+                    {
+                        'id': 1,
+                        '设备编码': "WE00001",
+                        '设备类型': "机械设备",
+                        '所属': "宁波XX机械有限公司",
+                        '设备名称': "设备1",
+                        '运行时长': "55h",
+                        '开模次数':1252,
+                        '设备状态': 1,
+                        '备注':"xxxxxx"
+                    },
+                    {
+                        'id':2,
+                        '设备编码': "WE00002",
+                        '设备类型': "机械设备",
+                        '所属': "宁波XX机械有限公司",
+                        '设备名称': "设备2",
+                        '开模次数': 586,
+                        '运行时长': "27h",
+                        '设备状态': 2,
+                        '备注': "xxxxxx"
+                    },
+                    {
+                        'id': 3,
+                        '设备编码': "WE00003",
+                        '设备类型': "机械设备",
+                        '所属': "宁波XX机械有限公司",
+                        '设备名称': "设备3",
+                        '开模次数': 586,
+                        '运行时长': "27h",
+                        '设备状态': 3,
+                        '备注': "xxxxxx"
+                    }
+                ]
+                })
         })
-    </script>    
+    </script>
 }
 

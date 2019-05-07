@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\DataAnalysis\bin\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +48,7 @@
     <Compile Include="DBHelper\CommandInfo.cs" />
     <Compile Include="DBHelper\DALBaseSqlServer.cs" />
     <Compile Include="DBHelper\DALBaseSqlServerAdv.cs" />
+    <Compile Include="DBHelper\DbHelperMysql.cs" />
     <Compile Include="DBHelper\DbHelperSQL.cs" />
     <Compile Include="Gy_User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

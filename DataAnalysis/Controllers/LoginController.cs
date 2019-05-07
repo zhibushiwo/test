@@ -15,7 +15,10 @@ namespace DataAnalysis.Controllers
         {
             return View();
         }
-
+        public ActionResult login()
+        {
+            return View();
+        }
         public JsonResult CheckUser()
         {
             string userName = SiteAbout.gStr("userName");

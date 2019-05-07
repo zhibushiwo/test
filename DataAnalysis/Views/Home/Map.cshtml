@@ -11,6 +11,7 @@
         <div class="layui-card">
             <div class="layui-card-header">地图</div>
             <div class="layui-card-body">
+                <button type="button" class="layui-btn" id="btn_move">移动</button>
                 <div class="col-xs-12" id="mapDiv" style="height:700px"></div>
             </div>
         </div>
@@ -63,7 +64,7 @@
                 zoomControl: true,
                 attributionControl: true,
 
-            }).setView([29.849167, 121.669444], 12);
+            }).setView([29.849167, 121.669444], 10);
             let Baselayer = L.tileLayer(urlTemplate.mapbox_url, {
                 maxZoom: 17, //最大视图
                 minZoom: 2, //最小视图
@@ -111,6 +112,14 @@
                     area: ['500px', '300px']
                 })
             }
+            $("#btn_move").click(function () {
+                map.panTo([30.977167, 121.968554], {
+                    animate: true
+                })
+            })
+            
+           
         })
+        
     </script>
 }

@@ -29,7 +29,7 @@
                     </dl>
                 </li>
             </ul>
-            <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
+            <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right" style="padding-right:15px">
                 <li class="layui-nav-item layui-hide-xs" lay-unselect>
                     <a href="javascript:;" layadmin-event="theme">
                         <i class="layui-icon layui-icon-theme"></i>
@@ -48,15 +48,15 @@
                         <dd><a lay-href="set/user/info.html">基本资料</a></dd>
                         <dd><a lay-href="set/user/password.html">修改密码</a></dd>
                         <hr>
-                        <dd layadmin-event="logout" style="text-align: center;"><a>退出</a></dd>
+                        <dd  style="text-align: center;"><a href="@Url.Action("Index","Login")">退出</a></dd>
                     </dl>
                 </li>
 
                 <li class="layui-nav-item layui-hide-xs" lay-unselect>
                 </li>
-                <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-unselect>
+                @*<li class="layui-nav-item layui-show-xs-inline-block " lay-unselect>
                     <a href="javascript:;" layadmin-event="more"><i class="layui-icon layui-icon-more-vertical"></i></a>
-                </li>
+                </li>*@
             </ul>
         </div>
 

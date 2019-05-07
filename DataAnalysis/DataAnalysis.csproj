@@ -46,6 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=5.2.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -141,11 +145,17 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="layuiadmin\banner.png" />
+    <Content Include="layuiadmin\case1.jpg" />
     <Content Include="layuiadmin\config.js" />
+    <Content Include="layuiadmin\fw_icon1.png" />
+    <Content Include="layuiadmin\fw_img2.jpg" />
+    <Content Include="layuiadmin\gy_img1.jpg" />
     <Content Include="layuiadmin\json\console\prograss.js" />
     <Content Include="layuiadmin\json\console\top-card.js" />
     <Content Include="layuiadmin\json\console\top-search.js" />
